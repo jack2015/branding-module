@@ -269,36 +269,6 @@ char *_getMachineName()
 			return strdup("LX-2T");
 		}
 		/** XTrend detection */
-		else if(strcmp(boxtype_name, "et4x00") == 0)
-		{
-			free(boxtype_name);
-			return strdup("ET4x00");
-		}
-		else if(strcmp(boxtype_name, "et4000") == 0)
-		{
-			free(boxtype_name);
-			return strdup("ET4000");
-		}
-		else if(strcmp(boxtype_name, "et5x00") == 0)
-		{
-			free(boxtype_name);
-			return strdup("ET5x00");
-		}
-		else if(strcmp(boxtype_name, "et5000") == 0)
-		{
-			free(boxtype_name);
-			return strdup("ET5000");
-		}
-		else if(strcmp(boxtype_name, "et6000") == 0)
-		{
-			free(boxtype_name);
-			return strdup("ET6000");
-		}
-		else if(strcmp(boxtype_name, "et6500") == 0)
-		{
-			free(boxtype_name);
-			return strdup("ET6500");
-		}
 		else if(strcmp(boxtype_name, "et7000") == 0)
 		{
 			free(boxtype_name);
@@ -334,31 +304,6 @@ char *_getMachineName()
 				return strdup(MACHINE_NAME);
 			}
 		}
-		else if(strcmp(boxtype_name, "et7500") == 0)
-		{
-			free(boxtype_name);
-			return strdup("ET7500");
-		}
-		else if(strcmp(boxtype_name, "et9x00") == 0)
-		{
-			free(boxtype_name);
-			return strdup("ET9x00");
-		}
-		else if(strcmp(boxtype_name, "et9000") == 0)
-		{
-			free(boxtype_name);
-			return strdup("ET9000");
-		}
-		else if(strcmp(boxtype_name, "et9200") == 0)
-		{
-			free(boxtype_name);
-			return strdup("ET9200");
-		}
-		else if(strcmp(boxtype_name, "et9500") == 0)
-		{
-			free(boxtype_name);
-			return strdup("ET9500");
-		}
 		else if(strcmp(BOXTYPE, "twinboxlcd") == 0)
 		{
 			if(strcmp(boxtype_name, "7200S") == 0)
@@ -382,59 +327,13 @@ char *_getMachineName()
 	else if (fileExist("/proc/stb/info/azmodel") && fileExist("/proc/stb/info/model"))
 	{
 		boxtype_name = ReadProcEntry("/proc/stb/info/model");
-		if(strcmp(boxtype_name, "me") == 0)
-		{
-			free(boxtype_name);
-			return strdup("Me");
-		}
-		else if(strcmp(boxtype_name, "minime") == 0)
-		{
-			free(boxtype_name);
-			return strdup("Mini Me");
-		}
-		else if(strcmp(boxtype_name, "premium") == 0)
-		{
-			free(boxtype_name);
-			return strdup("Premium");
-		}
-		else if(strcmp(boxtype_name, "premium+") == 0)
-		{
-			free(boxtype_name);
-			return strdup("Premium+");
-		}
-		else if(strcmp(boxtype_name, "elite") == 0)
-		{
-			free(boxtype_name);
-			return strdup("Elite");
-		}
-		else if(strcmp(boxtype_name, "ultra") == 0)
-		{
-			free(boxtype_name);
-			return strdup("Ultra");
-		}
-		else
-		{
-			free(boxtype_name);
-		}
+		free(boxtype_name);
 	}
 	else if (fileExist("/proc/stb/info/model"))
 	{
 		boxtype_name = ReadProcEntry("/proc/stb/info/model");
-		if(strcmp(boxtype_name, "dm525") == 0)
-		{
-			free(boxtype_name);
-			return strdup("DM525");
-		}
-		else if(strcmp(boxtype_name, "dm920") == 0)
-		{
-			free(boxtype_name);
-			return strdup("DM920");
-		}
-		else
-		{
-			free(boxtype_name);
-			return strdup(MACHINE_NAME);
-		}
+		free(boxtype_name);
+		return strdup(MACHINE_NAME);
 	}
 	return strdup(MACHINE_NAME);
 }
