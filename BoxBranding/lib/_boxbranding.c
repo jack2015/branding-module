@@ -78,8 +78,8 @@ static PyMethodDef boxbrandingMethods[] = {
 	{ "getImageArch", getImageArch, METH_NOARGS, NULL },
 	{ "getDisplayType", getDisplayType, METH_NOARGS, NULL },
 	{ "getHaveSmallFlash", getHaveSmallFlash, METH_NOARGS, NULL },
-	{ "getHaveTranscoding", getHaveTranscoding1, METH_NOARGS, NULL },
-	{ "getHaveMultiTranscoding", getHaveTranscoding2, METH_NOARGS, NULL },
+	{ "getHaveTranscoding", getHaveTranscoding, METH_NOARGS, NULL },
+	{ "getHaveMultiTranscoding", getHaveMultiTranscoding, METH_NOARGS, NULL },
 	{ "getMachineProcModel", getMachineProcModel, METH_NOARGS, NULL },
 	{ NULL, NULL, 0, NULL }
 };
