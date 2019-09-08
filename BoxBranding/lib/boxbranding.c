@@ -433,6 +433,16 @@ char *_getHaveSmallFlash()
 	return strdup(HAVE_SMALLFLASH);
 }
 
+char *_getHaveTranscoding()
+{
+	return strdup(HAVE_TRANSCODING);
+}
+
+char *_getHaveMultiTranscoding()
+{
+	return strdup(HAVE_MULTITRANSCODING);
+}
+
 char *_getMachineProcModel() // return just value from proc entry
 {
 	FILE *boxtype_file;

@@ -44,6 +44,8 @@ MAKE_STRING_FUNCTION(getMachineUBINIZE)
 MAKE_STRING_FUNCTION(getImageArch)
 MAKE_STRING_FUNCTION(getDisplayType)
 MAKE_STRING_FUNCTION(getHaveSmallFlash)
+MAKE_STRING_FUNCTION(getHaveTranscoding)
+MAKE_STRING_FUNCTION(getHaveMultiTranscoding)
 MAKE_STRING_FUNCTION(getMachineProcModel)
 
 /* Module specification */
@@ -76,6 +78,8 @@ static PyMethodDef boxbrandingMethods[] = {
 	{ "getImageArch", getImageArch, METH_NOARGS, NULL },
 	{ "getDisplayType", getDisplayType, METH_NOARGS, NULL },
 	{ "getHaveSmallFlash", getHaveSmallFlash, METH_NOARGS, NULL },
+	{ "getHaveTranscoding", getHaveTranscoding1, METH_NOARGS, NULL },
+	{ "getHaveMultiTranscoding", getHaveTranscoding2, METH_NOARGS, NULL },
 	{ "getMachineProcModel", getMachineProcModel, METH_NOARGS, NULL },
 	{ NULL, NULL, 0, NULL }
 };

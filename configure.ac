@@ -190,6 +190,18 @@ AC_ARG_WITH(flash-type,
 AC_SUBST(HAVE_SMALLFLASH)
 AC_DEFINE_UNQUOTED(HAVE_SMALLFLASH,"$HAVE_SMALLFLASH",[smallflash])
 
+AC_ARG_WITH(transcoding,
+	[  --with-transcoding=NAME transcoding [[transcoding,...]]],
+	[HAVE_TRANSCODING="$withval"],[HAVE_TRANSCODING="true"])
+AC_SUBST(HAVE_TRANSCODING)
+AC_DEFINE_UNQUOTED(HAVE_TRANSCODING,"$HAVE_TRANSCODING",[transcoding])
+
+AC_ARG_WITH(multitranscoding,
+	[  --with-multitranscoding=NAME multitranscoding [[multitranscoding,...]]],
+	[HAVE_MULTITRANSCODING="$withval"],[HAVE_MULTITRANSCODING="true"])
+AC_SUBST(HAVE_MULTITRANSCODING)
+AC_DEFINE_UNQUOTED(HAVE_MULTITRANSCODING,"$HAVE_MULTITRANSCODING",[multitranscoding])
+
 AC_ARG_WITH(debug,
 	AS_HELP_STRING([--without-debug],[disable debugging code]),
 	[with_debug="$withval"],[with_debug=""])
