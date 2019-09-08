@@ -423,6 +423,16 @@ char *_getImageArch()
 	return strdup(ARCH_TYPE);
 }
 
+char *_getDisplayType()
+{
+	return strdup(DISPLAY_TYPE);
+}
+
+char *_getHaveSmallFlash()
+{
+	return strdup(HAVE_SMALLFLASH);
+}
+
 char *_getMachineProcModel() // return just value from proc entry
 {
 	FILE *boxtype_file;

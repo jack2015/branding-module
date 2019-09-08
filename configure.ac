@@ -178,6 +178,18 @@ AC_ARG_WITH(arch,
 AC_SUBST(ARCH_TYPE)
 AC_DEFINE_UNQUOTED(ARCH_TYPE,"$ARCH_TYPE",[arch name])
 
+AC_ARG_WITH(display-type,
+	[  --with-display-type=NAME display type [[7segment,textlcd...]]],
+	[DISPLAY_TYPE="$withval"],[DISPLAY_TYPE=""])
+AC_SUBST(DISPLAY_TYPE)
+AC_DEFINE_UNQUOTED(DISPLAY_TYPE,"$DISPLAY_TYPE",[display type])
+
+AC_ARG_WITH(flash-type,
+	[  --with-flash-type=NAME flash type [[smallflash,...]]],
+	[HAVE_SMALLFLASH="$withval"],[HAVE_SMALLFLASH="true"])
+AC_SUBST(HAVE_SMALLFLASH)
+AC_DEFINE_UNQUOTED(HAVE_SMALLFLASH,"$HAVE_SMALLFLASH",[smallflash])
+
 AC_ARG_WITH(debug,
 	AS_HELP_STRING([--without-debug],[disable debugging code]),
 	[with_debug="$withval"],[with_debug=""])
