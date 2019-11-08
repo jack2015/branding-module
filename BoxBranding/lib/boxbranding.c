@@ -433,6 +433,11 @@ char *_getHaveSmallFlash()
 	return strdup(HAVE_SMALLFLASH);
 }
 
+char *_getHaveMiddleFlash()
+{
+	return strdup(HAVE_MIDDLEFLASH);
+}
+
 char *_getHaveTranscoding()
 {
 	return strdup(HAVE_TRANSCODING);
