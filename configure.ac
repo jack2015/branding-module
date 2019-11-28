@@ -208,6 +208,12 @@ AC_ARG_WITH(multitranscoding,
 AC_SUBST(HAVE_MULTITRANSCODING)
 AC_DEFINE_UNQUOTED(HAVE_MULTITRANSCODING,"$HAVE_MULTITRANSCODING",[multitranscoding])
 
+AC_ARG_WITH(multilib,
+	[  --with-multilib=NAME multilib [[multilib,...]]],
+	[HAVE_MULTILIB="$withval"],[HAVE_MULTILIB="true"])
+AC_SUBST(HAVE_MULTILIB)
+AC_DEFINE_UNQUOTED(HAVE_MULTILIB,"$HAVE_MULTILIB",[multilib])
+
 AC_ARG_WITH(debug,
 	AS_HELP_STRING([--without-debug],[disable debugging code]),
 	[with_debug="$withval"],[with_debug=""])

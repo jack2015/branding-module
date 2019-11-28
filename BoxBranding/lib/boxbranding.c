@@ -448,6 +448,11 @@ char *_getHaveMultiTranscoding()
 	return strdup(HAVE_MULTITRANSCODING);
 }
 
+char *_getHaveMultiLib()
+{
+	return strdup(HAVE_MULTILIB);
+}
+
 char *_getMachineProcModel() // return just value from proc entry
 {
 	FILE *boxtype_file;
