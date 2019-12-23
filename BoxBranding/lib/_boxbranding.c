@@ -42,6 +42,7 @@ MAKE_STRING_FUNCTION(getMachineKernelFile)
 MAKE_STRING_FUNCTION(getMachineMKUBIFS)
 MAKE_STRING_FUNCTION(getMachineUBINIZE)
 MAKE_STRING_FUNCTION(getImageArch)
+MAKE_STRING_FUNCTION(getImageFPU)
 MAKE_STRING_FUNCTION(getDisplayType)
 MAKE_STRING_FUNCTION(getHaveSmallFlash)
 MAKE_STRING_FUNCTION(getHaveMiddleFlash)
@@ -78,6 +79,7 @@ static PyMethodDef boxbrandingMethods[] = {
 	{ "getMachineMKUBIFS", getMachineMKUBIFS, METH_NOARGS, NULL },
 	{ "getMachineUBINIZE", getMachineUBINIZE, METH_NOARGS, NULL },
 	{ "getImageArch", getImageArch, METH_NOARGS, NULL },
+	{ "getImageFPU", getImageFPU, METH_NOARGS, NULL },
 	{ "getDisplayType", getDisplayType, METH_NOARGS, NULL },
 	{ "getHaveSmallFlash", getHaveSmallFlash, METH_NOARGS, NULL },
 	{ "getHaveMiddleFlash", getHaveMiddleFlash, METH_NOARGS, NULL },

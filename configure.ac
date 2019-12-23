@@ -178,6 +178,12 @@ AC_ARG_WITH(arch,
 AC_SUBST(ARCH_TYPE)
 AC_DEFINE_UNQUOTED(ARCH_TYPE,"$ARCH_TYPE",[arch name])
 
+AC_ARG_WITH(tfpu,
+	[  --with-tfpu=NAME tfpu name [[soft,...]]],
+	[TFPU_TYPE="$withval"],[TFPU_TYPE=""])
+AC_SUBST(TFPU_TYPE)
+AC_DEFINE_UNQUOTED(TFPU_TYPE,"$TFPU_TYPE",[tfpu name])
+
 AC_ARG_WITH(display-type,
 	[  --with-display-type=NAME display type [[7segment,textlcd...]]],
 	[DISPLAY_TYPE="$withval"],[DISPLAY_TYPE=""])

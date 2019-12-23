@@ -36,6 +36,7 @@ char *_getMachineKernelFile();
 char *_getMachineMKUBIFS();
 char *_getMachineUBINIZE();
 char *_getImageArch();
+char *_getImageFPU();
 char *_getDisplayType();
 char *_getHaveSmallFlash();
 char *_getHaveMiddleFlash();

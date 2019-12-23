@@ -423,6 +423,11 @@ char *_getImageArch()
 	return strdup(ARCH_TYPE);
 }
 
+char *_getImageFPU()
+{
+	return strdup(TFPU_TYPE);
+}
+
 char *_getDisplayType()
 {
 	return strdup(DISPLAY_TYPE);
