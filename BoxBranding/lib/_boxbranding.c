@@ -18,6 +18,7 @@ static PyObject* name(PyObject* self, PyObject* args) \
 /* Available functions */
 MAKE_STRING_FUNCTION(getVisionVersion)
 MAKE_STRING_FUNCTION(getVisionRevision)
+MAKE_STRING_FUNCTION(getDeveloperName)
 MAKE_STRING_FUNCTION(getBoxBrand)
 MAKE_STRING_FUNCTION(getOEVersion)
 MAKE_STRING_FUNCTION(getImageDistro)
@@ -55,6 +56,7 @@ MAKE_STRING_FUNCTION(getMachineProcModel)
 static PyMethodDef boxbrandingMethods[] = {
 	{ "getVisionVersion", getVisionVersion, METH_NOARGS, NULL },
 	{ "getVisionRevision", getVisionRevision, METH_NOARGS, NULL },
+	{ "getDeveloperName", getDeveloperName, METH_NOARGS, NULL },
 	{ "getBoxBrand", getBoxBrand, METH_NOARGS, NULL },
 	{ "getOEVersion", getOEVersion, METH_NOARGS, NULL },
 	{ "getImageDistro", getImageDistro, METH_NOARGS, NULL },

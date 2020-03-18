@@ -34,6 +34,12 @@ AC_ARG_WITH(visionrevision,
 AC_SUBST(VISIONREVISION)
 AC_DEFINE_UNQUOTED(VISIONREVISION,"$VISIONREVISION",[vision revision])
 
+AC_ARG_WITH(developername,
+	[  --with-developername=NAME developer name [[persianprince,...]]],
+	[DEVELOPERNAME="$withval"],[DEVELOPERNAME=""])
+AC_SUBST(DEVELOPERNAME)
+AC_DEFINE_UNQUOTED(DEVELOPERNAME,"$DEVELOPERNAME",[developer name])
+
 AC_ARG_WITH(boxbrand,
 	[  --with-boxbrand=NAME box brand [[dreambox,...]]],
 	[BOXBRAND="$withval"],[BOXBRAND=""])
