@@ -12,6 +12,7 @@ char *ReadProcEntry(char *filename);
 
 char *_getVisionVersion();
 char *_getVisionRevision();
+char *_getDeveloperName();
 char *_getBoxBrand();
 char *_getOEVersion();
 char *_getImageDistro();

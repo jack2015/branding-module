@@ -80,6 +80,11 @@ char *_getVisionRevision()
 	return strdup(VISIONREVISION);
 }
 
+char *_getDeveloperName()
+{
+	return strdup(DEVELOPERNAME);
+}
+
 char *_getBoxBrand()
 {
 	return strdup(BOXBRAND);
