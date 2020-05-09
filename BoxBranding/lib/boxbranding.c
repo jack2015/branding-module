@@ -210,10 +210,10 @@ char *_getBoxType()
 	else if(strcmp(BOXTYPE, "sf8008") == 0)
 	{
 		boxtype_name = ReadProcEntry("/proc/stb/info/type");
-		if(strcmp(boxtype_name, "10") == 0)
+		if(strcmp(boxtype_name, "12") == 0)
 		{
 			free(boxtype_name);
-			return strdup("sf8008s");
+			return strdup("sf8008c");
 		}
 		else if(strcmp(boxtype_name, "11") == 0)
 		{
@@ -223,7 +223,7 @@ char *_getBoxType()
 		else
 		{
 			free(boxtype_name);
-			return strdup(BOXTYPE);
+			return strdup("sf8008s");
 		}
 	}
 	return strdup(BOXTYPE);
@@ -293,10 +293,10 @@ char *_getMachineName()
 		{
 			free(boxtype_name);
 			boxtype_name = ReadProcEntry("/proc/stb/info/type");
-			if(startsWith(boxtype_name, "10"))
+			if(startsWith(boxtype_name, "12"))
 			{
 				free(boxtype_name);
-				return strdup("SF8008 4K Single");
+				return strdup("SF8008 4K Combo");
 			}
 			else if(startsWith(boxtype_name, "11"))
 			{
@@ -306,7 +306,7 @@ char *_getMachineName()
 			else
 			{
 				free(boxtype_name);
-				return strdup(MACHINE_NAME);
+				return strdup("SF8008 4K Single");
 			}
 		}
 		else if(strcmp(BOXTYPE, "twinboxlcd") == 0)
