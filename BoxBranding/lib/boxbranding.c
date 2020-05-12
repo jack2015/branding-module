@@ -440,26 +440,36 @@ char *_getDisplayType()
 
 char *_getHaveSmallFlash()
 {
+	if(strcmp(HAVE_SMALLFLASH, "False") == 0)
+		return strdup("");
 	return strdup(HAVE_SMALLFLASH);
 }
 
 char *_getHaveMiddleFlash()
 {
+	if(strcmp(HAVE_MIDDLEFLASH, "False") == 0)
+		return strdup("");
 	return strdup(HAVE_MIDDLEFLASH);
 }
 
 char *_getHaveTranscoding()
 {
+	if(strcmp(HAVE_TRANSCODING, "False") == 0)
+		return strdup("");
 	return strdup(HAVE_TRANSCODING);
 }
 
 char *_getHaveMultiTranscoding()
 {
+	if(strcmp(HAVE_MULTITRANSCODING, "False") == 0)
+		return strdup("");
 	return strdup(HAVE_MULTITRANSCODING);
 }
 
 char *_getHaveMultiLib()
 {
+	if(strcmp(HAVE_MULTILIB, "False") == 0)
+		return strdup("");
 	return strdup(HAVE_MULTILIB);
 }
 
