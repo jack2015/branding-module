@@ -652,3 +652,8 @@ char *_getBlindscanBin()
 {
 	return strdup(BLINDSCANBINARY);
 }
+
+char *_getSoCFamily()
+{
+	return strdup(SOCFAMILY);
+}

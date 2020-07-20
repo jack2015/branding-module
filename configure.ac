@@ -292,6 +292,12 @@ AC_ARG_WITH(blindscanbinary,
 AC_SUBST(BLINDSCANBINARY)
 AC_DEFINE_UNQUOTED(BLINDSCANBINARY,"$BLINDSCANBINARY",[blindscan binary])
 
+AC_ARG_WITH(socfamily,
+	[  --with-socfamily=NAME SoC family [[SoC,...]]],
+	[SOCFAMILY="$withval"],[SOCFAMILY=""])
+AC_SUBST(SOCFAMILY)
+AC_DEFINE_UNQUOTED(SOCFAMILY,"$SOCFAMILY",[SoC family])
+
 AC_ARG_WITH(debug,
 	AS_HELP_STRING([--without-debug],[disable debugging code]),
 	[with_debug="$withval"],[with_debug=""])
