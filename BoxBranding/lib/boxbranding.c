@@ -577,3 +577,73 @@ char *_getMachineProcModel() // return just value from proc entry
 	}
 	return strdup(MACHINE_NAME);
 }
+
+char *_getHaveHDMI()
+{
+	if(strcmp(HAVE_HDMI, "False") == 0)
+		return strdup("");
+	return strdup(HAVE_HDMI);
+}
+
+char *_getHaveYUV()
+{
+	if(strcmp(HAVE_YUV, "False") == 0)
+		return strdup("");
+	return strdup(HAVE_YUV);
+}
+
+char *_getHaveRCA()
+{
+	if(strcmp(HAVE_RCA, "False") == 0)
+		return strdup("");
+	return strdup(HAVE_RCA);
+}
+
+char *_getHaveAVJACK()
+{
+	if(strcmp(HAVE_AV_JACK, "False") == 0)
+		return strdup("");
+	return strdup(HAVE_AV_JACK);
+}
+
+char *_getHaveSCART()
+{
+	if(strcmp(HAVE_SCART, "False") == 0)
+		return strdup("");
+	return strdup(HAVE_SCART);
+}
+
+char *_getHaveDVI()
+{
+	if(strcmp(HAVE_DVI, "False") == 0)
+		return strdup("");
+	return strdup(HAVE_DVI);
+}
+
+char *_getHaveHDMIinHD()
+{
+	if(strcmp(HAVE_HDMI_IN_HD, "False") == 0)
+		return strdup("");
+	return strdup(HAVE_HDMI_IN_HD);
+}
+
+char *_getHaveHDMIinFHD()
+{
+	if(strcmp(HAVE_HDMI_IN_FHD, "False") == 0)
+		return strdup("");
+	return strdup(HAVE_HDMI_IN_FHD);
+}
+
+char *_getHaveWOL()
+{
+	if(strcmp(HAVE_WOL, "False") == 0)
+		return strdup("");
+	return strdup(HAVE_WOL);
+}
+
+char *_getHaveCI()
+{
+	if(strcmp(HAVE_CI, "False") == 0)
+		return strdup("");
+	return strdup(HAVE_CI);
+}

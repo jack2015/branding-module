@@ -51,6 +51,16 @@ MAKE_STRING_FUNCTION(getHaveTranscoding)
 MAKE_STRING_FUNCTION(getHaveMultiTranscoding)
 MAKE_STRING_FUNCTION(getHaveMultiLib)
 MAKE_STRING_FUNCTION(getMachineProcModel)
+MAKE_STRING_FUNCTION(getHaveHDMI)
+MAKE_STRING_FUNCTION(getHaveYUV)
+MAKE_STRING_FUNCTION(getHaveRCA)
+MAKE_STRING_FUNCTION(getHaveAVJACK)
+MAKE_STRING_FUNCTION(getHaveSCART)
+MAKE_STRING_FUNCTION(getHaveDVI)
+MAKE_STRING_FUNCTION(getHaveHDMIinHD)
+MAKE_STRING_FUNCTION(getHaveHDMIinFHD)
+MAKE_STRING_FUNCTION(getHaveWOL)
+MAKE_STRING_FUNCTION(getHaveCI)
 
 /* Module specification */
 static PyMethodDef boxbrandingMethods[] = {
@@ -89,6 +99,16 @@ static PyMethodDef boxbrandingMethods[] = {
 	{ "getHaveMultiTranscoding", getHaveMultiTranscoding, METH_NOARGS, NULL },
 	{ "getHaveMultiLib", getHaveMultiLib, METH_NOARGS, NULL },
 	{ "getMachineProcModel", getMachineProcModel, METH_NOARGS, NULL },
+	{ "getHaveHDMI", getHaveHDMI, METH_NOARGS, NULL },
+	{ "getHaveYUV", getHaveYUV, METH_NOARGS, NULL },
+	{ "getHaveRCA", getHaveRCA, METH_NOARGS, NULL },
+	{ "getHaveAVJACK", getHaveAVJACK, METH_NOARGS, NULL },
+	{ "getHaveSCART", getHaveSCART, METH_NOARGS, NULL },
+	{ "getHaveDVI", getHaveDVI, METH_NOARGS, NULL },
+	{ "getHaveHDMIinHD", getHaveHDMIinHD, METH_NOARGS, NULL },
+	{ "getHaveHDMIinFHD", getHaveHDMIinFHD, METH_NOARGS, NULL },
+	{ "getHaveWOL", getHaveWOL, METH_NOARGS, NULL },
+	{ "getHaveCI", getHaveCI, METH_NOARGS, NULL },
 	{ NULL, NULL, 0, NULL }
 };
 

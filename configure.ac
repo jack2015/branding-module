@@ -226,6 +226,66 @@ AC_ARG_WITH(multilib,
 AC_SUBST(HAVE_MULTILIB)
 AC_DEFINE_UNQUOTED(HAVE_MULTILIB,"$HAVE_MULTILIB",[multilib])
 
+AC_ARG_WITH(hdmi,
+	[  --with-hdmi=NAME hdmi [[hdmi......]]],
+	[HAVE_HDMI="$withval"],[HAVE_HDMI="true"])
+AC_SUBST(HAVE_HDMI)
+AC_DEFINE_UNQUOTED(HAVE_HDMI,"$HAVE_HDMI",[hdmi])
+
+AC_ARG_WITH(yuv,
+	[  --with-yuv=NAME yuv [[yuv......]]],
+	[HAVE_YUV="$withval"],[HAVE_YUV="true"])
+AC_SUBST(HAVE_YUV)
+AC_DEFINE_UNQUOTED(HAVE_YUV,"$HAVE_YUV",[yuv])
+
+AC_ARG_WITH(rca,
+	[  --with-rca=NAME rca [[rca......]]],
+	[HAVE_RCA="$withval"],[HAVE_RCA="true"])
+AC_SUBST(HAVE_RCA)
+AC_DEFINE_UNQUOTED(HAVE_RCA,"$HAVE_RCA",[rca])
+
+AC_ARG_WITH(av-jack,
+	[  --with-av-jack=NAME av-jack [[av-jack......]]],
+	[HAVE_AV_JACK="$withval"],[HAVE_AV_JACK="true"])
+AC_SUBST(HAVE_AV_JACK)
+AC_DEFINE_UNQUOTED(HAVE_AV_JACK,"$HAVE_AV_JACK",[av-jack])
+
+AC_ARG_WITH(scart,
+	[  --with-scart=NAME scart [[scart......]]],
+	[HAVE_SCART="$withval"],[HAVE_SCART="true"])
+AC_SUBST(HAVE_SCART)
+AC_DEFINE_UNQUOTED(HAVE_SCART,"$HAVE_SCART",[scart])
+
+AC_ARG_WITH(dvi,
+	[  --with-dvi=NAME dvi [[dvi......]]],
+	[HAVE_DVI="$withval"],[HAVE_DVI="true"])
+AC_SUBST(HAVE_DVI)
+AC_DEFINE_UNQUOTED(HAVE_DVI,"$HAVE_DVI",[dvi])
+
+AC_ARG_WITH(hdmi-in-hd,
+	[  --with-hdmi-in-hd=NAME hdmi-in-hd [[hdmi-in-hd......]]],
+	[HAVE_HDMI_IN_HD="$withval"],[HAVE_HDMI_IN_HD="true"])
+AC_SUBST(HAVE_HDMI_IN_HD)
+AC_DEFINE_UNQUOTED(HAVE_HDMI_IN_HD,"$HAVE_HDMI_IN_HD",[hdmi-in-hd])
+
+AC_ARG_WITH(hdmi-in-fhd,
+	[  --with-hdmi-in-fhd=NAME hdmi-in-fhd [[hdmi-in-fhd......]]],
+	[HAVE_HDMI_IN_FHD="$withval"],[HAVE_HDMI_IN_FHD="true"])
+AC_SUBST(HAVE_HDMI_IN_FHD)
+AC_DEFINE_UNQUOTED(HAVE_HDMI_IN_FHD,"$HAVE_HDMI_IN_FHD",[hdmi-in-fhd])
+
+AC_ARG_WITH(wol,
+	[  --with-wol=NAME wol [[wol......]]],
+	[HAVE_WOL="$withval"],[HAVE_WOL="true"])
+AC_SUBST(HAVE_WOL)
+AC_DEFINE_UNQUOTED(HAVE_WOL,"$HAVE_WOL",[wol])
+
+AC_ARG_WITH(ci,
+	[  --with-ci=NAME ci [[ci......]]],
+	[HAVE_CI="$withval"],[HAVE_CI="true"])
+AC_SUBST(HAVE_CI)
+AC_DEFINE_UNQUOTED(HAVE_CI,"$HAVE_CI",[ci])
+
 AC_ARG_WITH(debug,
 	AS_HELP_STRING([--without-debug],[disable debugging code]),
 	[with_debug="$withval"],[with_debug=""])

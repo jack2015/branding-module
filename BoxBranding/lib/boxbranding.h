@@ -45,5 +45,15 @@ char *_getHaveTranscoding();
 char *_getHaveMultiTranscoding();
 char *_getHaveMultiLib();
 char *_getMachineProcModel();
+char *_getHaveHDMI();
+char *_getHaveYUV();
+char *_getHaveRCA();
+char *_getHaveAVJACK();
+char *_getHaveSCART();
+char *_getHaveDVI();
+char *_getHaveHDMIinHD();
+char *_getHaveHDMIinFHD();
+char *_getHaveWOL();
+char *_getHaveCI();
 
 #endif
