@@ -647,3 +647,8 @@ char *_getHaveCI()
 		return strdup("");
 	return strdup(HAVE_CI);
 }
+
+char *_getBlindscanBin()
+{
+	return strdup(BLINDSCANBINARY);
+}

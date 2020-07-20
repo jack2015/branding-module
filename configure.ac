@@ -286,6 +286,12 @@ AC_ARG_WITH(ci,
 AC_SUBST(HAVE_CI)
 AC_DEFINE_UNQUOTED(HAVE_CI,"$HAVE_CI",[ci])
 
+AC_ARG_WITH(blindscanbinary,
+	[  --with-blindscanbinary=NAME blindscan binary [[blindscan,...]]],
+	[BLINDSCANBINARY="$withval"],[BLINDSCANBINARY=""])
+AC_SUBST(BLINDSCANBINARY)
+AC_DEFINE_UNQUOTED(BLINDSCANBINARY,"$BLINDSCANBINARY",[blindscan binary])
+
 AC_ARG_WITH(debug,
 	AS_HELP_STRING([--without-debug],[disable debugging code]),
 	[with_debug="$withval"],[with_debug=""])

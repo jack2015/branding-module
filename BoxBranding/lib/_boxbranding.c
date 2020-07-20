@@ -61,6 +61,7 @@ MAKE_STRING_FUNCTION(getHaveHDMIinHD)
 MAKE_STRING_FUNCTION(getHaveHDMIinFHD)
 MAKE_STRING_FUNCTION(getHaveWOL)
 MAKE_STRING_FUNCTION(getHaveCI)
+MAKE_STRING_FUNCTION(getBlindscanBin)
 
 /* Module specification */
 static PyMethodDef boxbrandingMethods[] = {
@@ -109,6 +110,7 @@ static PyMethodDef boxbrandingMethods[] = {
 	{ "getHaveHDMIinFHD", getHaveHDMIinFHD, METH_NOARGS, NULL },
 	{ "getHaveWOL", getHaveWOL, METH_NOARGS, NULL },
 	{ "getHaveCI", getHaveCI, METH_NOARGS, NULL },
+	{ "getBlindscanBin", getBlindscanBin, METH_NOARGS, NULL },
 	{ NULL, NULL, 0, NULL }
 };
 
