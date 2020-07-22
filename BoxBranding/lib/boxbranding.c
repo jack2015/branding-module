@@ -620,6 +620,13 @@ char *_getHaveDVI()
 	return strdup(HAVE_DVI);
 }
 
+char *_getHaveSVIDEO()
+{
+	if(strcmp(HAVE_SVIDEO, "False") == 0)
+		return strdup("");
+	return strdup(HAVE_SVIDEO);
+}
+
 char *_getHaveHDMIinHD()
 {
 	if(strcmp(HAVE_HDMI_IN_HD, "False") == 0)

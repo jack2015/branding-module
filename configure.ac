@@ -262,6 +262,12 @@ AC_ARG_WITH(dvi,
 AC_SUBST(HAVE_DVI)
 AC_DEFINE_UNQUOTED(HAVE_DVI,"$HAVE_DVI",[dvi])
 
+AC_ARG_WITH(svideo,
+	[  --with-svideo=NAME svideo [[svideo......]]],
+	[HAVE_SVIDEO="$withval"],[HAVE_SVIDEO="true"])
+AC_SUBST(HAVE_SVIDEO)
+AC_DEFINE_UNQUOTED(HAVE_SVIDEO,"$HAVE_SVIDEO",[svideo])
+
 AC_ARG_WITH(hdmi-in-hd,
 	[  --with-hdmi-in-hd=NAME hdmi-in-hd [[hdmi-in-hd......]]],
 	[HAVE_HDMI_IN_HD="$withval"],[HAVE_HDMI_IN_HD="true"])
