@@ -657,3 +657,10 @@ char *_getSoCFamily()
 {
 	return strdup(SOCFAMILY);
 }
+
+char *_getHaveVFDSymbol()
+{
+	if(strcmp(HAVE_VFDSYMBOL, "False") == 0)
+		return strdup("");
+	return strdup(HAVE_VFDSYMBOL);
+}

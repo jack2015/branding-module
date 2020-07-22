@@ -63,6 +63,7 @@ MAKE_STRING_FUNCTION(getHaveWOL)
 MAKE_STRING_FUNCTION(getHaveCI)
 MAKE_STRING_FUNCTION(getBlindscanBin)
 MAKE_STRING_FUNCTION(getSoCFamily)
+MAKE_STRING_FUNCTION(getHaveVFDSymbol)
 
 /* Module specification */
 static PyMethodDef boxbrandingMethods[] = {
@@ -113,6 +114,7 @@ static PyMethodDef boxbrandingMethods[] = {
 	{ "getHaveCI", getHaveCI, METH_NOARGS, NULL },
 	{ "getBlindscanBin", getBlindscanBin, METH_NOARGS, NULL },
 	{ "getSoCFamily", getSoCFamily, METH_NOARGS, NULL },
+	{ "getHaveVFDSymbol", getHaveVFDSymbol, METH_NOARGS, NULL },
 	{ NULL, NULL, 0, NULL }
 };
 

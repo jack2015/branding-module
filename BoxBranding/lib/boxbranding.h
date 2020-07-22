@@ -57,5 +57,6 @@ char *_getHaveWOL();
 char *_getHaveCI();
 char *_getBlindscanBin();
 char *_getSoCFamily();
+char *_getHaveVFDSymbol();
 
 #endif
