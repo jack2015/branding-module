@@ -36,6 +36,7 @@ char *_getMachineRootFile();
 char *_getMachineKernelFile();
 char *_getMachineMKUBIFS();
 char *_getMachineUBINIZE();
+char *_getForceMode();
 char *_getImageArch();
 char *_getImageFPU();
 char *_getDisplayType();

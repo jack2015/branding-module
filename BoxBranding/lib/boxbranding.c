@@ -423,6 +423,11 @@ char *_getMachineUBINIZE()
 	return strdup(UBINIZE_ARGS);
 }
 
+char *_getForceMode()
+{
+	return strdup(FORCE_MODE);
+}
+
 char *_getImageArch()
 {
 	return strdup(ARCH_TYPE);
