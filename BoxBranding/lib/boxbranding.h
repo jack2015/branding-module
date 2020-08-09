@@ -60,5 +60,6 @@ char *_getHaveCI();
 char *_getBlindscanBin();
 char *_getSoCFamily();
 char *_getHaveVFDSymbol();
+char *_getKernelVersion();
 
 #endif

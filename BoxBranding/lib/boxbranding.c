@@ -676,3 +676,8 @@ char *_getHaveVFDSymbol()
 		return strdup("");
 	return strdup(HAVE_VFDSYMBOL);
 }
+
+char *_getKernelVersion()
+{
+	return strdup(KERNELVERSION);
+}

@@ -23,13 +23,13 @@ AX_PYTHON_DEVEL
 AX_PTHREAD
 
 AC_ARG_WITH(visionversion,
-	[  --with-visionversion=NAME vision version [[number,...]]],
+	[  --with-visionversion=NUMBER vision version [[number,...]]],
 	[VISIONVERSION="$withval"],[VISIONVERSION=""])
 AC_SUBST(VISIONVERSION)
 AC_DEFINE_UNQUOTED(VISIONVERSION,"$VISIONVERSION",[vision version])
 
 AC_ARG_WITH(visionrevision,
-	[  --with-visionrevision=NAME vision revision [[number,...]]],
+	[  --with-visionrevision=NUMBER vision revision [[number,...]]],
 	[VISIONREVISION="$withval"],[VISIONREVISION=""])
 AC_SUBST(VISIONREVISION)
 AC_DEFINE_UNQUOTED(VISIONREVISION,"$VISIONREVISION",[vision revision])
@@ -47,10 +47,10 @@ AC_SUBST(BOXBRAND)
 AC_DEFINE_UNQUOTED(BOXBRAND,"$BOXBRAND",[box brand])
 
 AC_ARG_WITH(oever,
-	[  --with-oever=NAME oe name [[7.2,...]]],
+	[  --with-oever=NUMBER oe number [[10.1,...]]],
 	[OE_VER="$withval"],[OE_VER=""])
 AC_SUBST(OE_VER)
-AC_DEFINE_UNQUOTED(OE_VER,"$OE_VER",[oe name])
+AC_DEFINE_UNQUOTED(OE_VER,"$OE_VER",[oe number])
 
 AC_ARG_WITH(distro,
 	[  --with-distro=NAME distro name [[openvision,...]]],
@@ -71,10 +71,10 @@ AC_SUBST(BRAND_OEM)
 AC_DEFINE_UNQUOTED(BRAND_OEM,"$BRAND_OEM",[brand oem])
 
 AC_ARG_WITH(machinebrand,
-	[  --with-machinebrand=NAME brand name [[dreambox,...]]],
+	[  --with-machinebrand=NAME brand brand [[dreambox,...]]],
 	[MACHINE_BRAND="$withval"],[MACHINE_BRAND=""])
 AC_SUBST(MACHINE_BRAND)
-AC_DEFINE_UNQUOTED(MACHINE_BRAND,"$MACHINE_BRAND",[machine name])
+AC_DEFINE_UNQUOTED(MACHINE_BRAND,"$MACHINE_BRAND",[machine brand])
 
 AC_ARG_WITH(machinename,
 	[  --with-machinename=NAME machine name [[dm800,...]]],
@@ -83,10 +83,10 @@ AC_SUBST(MACHINE_NAME)
 AC_DEFINE_UNQUOTED(MACHINE_NAME,"$MACHINE_NAME",[machine name])
 
 AC_ARG_WITH(machinebuild,
-	[  --with-machinebuild=NAME build name [[dm800,...]]],
+	[  --with-machinebuild=NAME stb platform [[dm800,...]]],
 	[MACHINE_BUILD="$withval"],[MACHINE_BUILD=""])
 AC_SUBST(MACHINE_BUILD)
-AC_DEFINE_UNQUOTED(MACHINE_BUILD,"$MACHINE_BUILD",[build name])
+AC_DEFINE_UNQUOTED(MACHINE_BUILD,"$MACHINE_BUILD",[stb platform])
 
 AC_ARG_WITH(machinemake,
 	[  --with-machinemake=NAME build name [[dm800,...]]],
@@ -95,43 +95,43 @@ AC_SUBST(MACHINE_MAKE)
 AC_DEFINE_UNQUOTED(MACHINE_MAKE,"$MACHINE_MAKE",[build name])
 
 AC_ARG_WITH(imageversion,
-	[  --with-imageversion=NAME version number [[number,...]]],
+	[  --with-imageversion=NUMBER version number [[number,...]]],
 	[IMAGEVERSION="$withval"],[IMAGEVERSION=""])
 AC_SUBST(IMAGEVERSION)
 AC_DEFINE_UNQUOTED(IMAGEVERSION,"$IMAGEVERSION",[version number])
 
 AC_ARG_WITH(imagebuild,
-	[  --with-imagebuild=NAME build number [[number,...]]],
+	[  --with-imagebuild=NUMBER build number [[number,...]]],
 	[IMAGEBUILD="$withval"],[IMAGEBUILD=""])
 AC_SUBST(IMAGEBUILD)
 AC_DEFINE_UNQUOTED(IMAGEBUILD,"$IMAGEBUILD",[build number])
 
 AC_ARG_WITH(imagedevbuild,
-	[  --with-imagedevbuild=NAME dev build number [[number,...]]],
+	[  --with-imagedevbuild=NUMBER dev build number [[number,...]]],
 	[IMAGEDEVBUILD="$withval"],[IMAGEDEVBUILD=""])
 AC_SUBST(IMAGEDEVBUILD)
 AC_DEFINE_UNQUOTED(IMAGEDEVBUILD,"$IMAGEDEVBUILD",[build number])
 
 AC_ARG_WITH(imagetype,
-	[  --with-imagetype=NAME imagetype name [[release,...]]],
+	[  --with-imagetype=NAME imagetype name [[develop,...]]],
 	[DISTRO_TYPE="$withval"],[DISTRO_TYPE=""])
 AC_SUBST(DISTRO_TYPE)
 AC_DEFINE_UNQUOTED(DISTRO_TYPE,"$DISTRO_TYPE",[imagetype name])
 
 AC_ARG_WITH(feedsurl,
-	[  --with-feedsurl=NAME feeds url  [[628]]],
+	[  --with-feedsurl=NAME feeds url  [[openvision,...]]],
 	[FEEDSURL="$withval"],[FEEDSURL=""])
 AC_SUBST(FEEDSURL)
-AC_DEFINE_UNQUOTED(FEEDSURL,"$FEEDSURL",[feeds url ])
+AC_DEFINE_UNQUOTED(FEEDSURL,"$FEEDSURL",[feeds url])
 
 AC_ARG_WITH(imagedir,
-	[  --with-imagedir=NAME imagedir folder [[628]]],
+	[  --with-imagedir=NAME imagedir folder [[machine,...]]],
 	[IMAGEDIR="$withval"],[IMAGEDIR=""])
 AC_SUBST(IMAGEDIR)
 AC_DEFINE_UNQUOTED(IMAGEDIR,"$IMAGEDIR",[imagedir folder])
 
 AC_ARG_WITH(imagefs,
-	[  --with-imagefs=NAME imagefs folder [[628]]],
+	[  --with-imagefs=NAME imagefs folder [[ext,...]]],
 	[IMAGE_FSTYPES="$withval"],[IMAGE_FSTYPES=""])
 AC_SUBST(IMAGE_FSTYPES)
 AC_DEFINE_UNQUOTED(IMAGE_FSTYPES,"$IMAGE_FSTYPES",[imagefs folder])
@@ -167,13 +167,13 @@ AC_SUBST(KERNEL_FILE)
 AC_DEFINE_UNQUOTED(KERNEL_FILE,"$KERNEL_FILE",[kernelfile name])
 
 AC_ARG_WITH(mkubifs,
-	[  --with-mkubifs=NAME mkubifs number [[2048,...]]],
+	[  --with-mkubifs=NUMBER mkubifs number [[2048,...]]],
 	[MKUBIFS_ARGS="$withval"],[MKUBIFS_ARGS=""])
 AC_SUBST(MKUBIFS_ARGS)
 AC_DEFINE_UNQUOTED(MKUBIFS_ARGS,"$MKUBIFS_ARGS",[mkubifs number])
 
 AC_ARG_WITH(ubinize,
-	[  --with-ubinize=NAME ubinize number [[2048,...]]],
+	[  --with-ubinize=NUMBER ubinize number [[2048,...]]],
 	[UBINIZE_ARGS="$withval"],[UBINIZE_ARGS=""])
 AC_SUBST(UBINIZE_ARGS)
 AC_DEFINE_UNQUOTED(UBINIZE_ARGS,"$UBINIZE_ARGS",[ubinize number])
@@ -315,6 +315,12 @@ AC_ARG_WITH(vfd-symbol,
 	[HAVE_VFDSYMBOL="$withval"],[HAVE_VFDSYMBOL="True"])
 AC_SUBST(HAVE_VFDSYMBOL)
 AC_DEFINE_UNQUOTED(HAVE_VFDSYMBOL,"$HAVE_VFDSYMBOL",[vfdsymbol])
+
+AC_ARG_WITH(kernelversion,
+	[  --with-kernelversion=NUMBER kernel version [[4,...]]],
+	[KERNELVERSION="$withval"],[KERNELVERSION=""])
+AC_SUBST(KERNELVERSION)
+AC_DEFINE_UNQUOTED(KERNELVERSION,"$KERNELVERSION",[kernel version])
 
 AC_ARG_WITH(debug,
 	AS_HELP_STRING([--without-debug],[disable debugging code]),
