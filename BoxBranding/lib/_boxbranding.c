@@ -67,6 +67,8 @@ MAKE_STRING_FUNCTION(getBlindscanBin)
 MAKE_STRING_FUNCTION(getSoCFamily)
 MAKE_STRING_FUNCTION(getHaveVFDSymbol)
 MAKE_STRING_FUNCTION(getKernelVersion)
+MAKE_STRING_FUNCTION(getRCType)
+MAKE_STRING_FUNCTION(getRCName)
 
 /* Module specification */
 static PyMethodDef boxbrandingMethods[] = {
@@ -121,6 +123,8 @@ static PyMethodDef boxbrandingMethods[] = {
 	{ "getSoCFamily", getSoCFamily, METH_NOARGS, NULL },
 	{ "getHaveVFDSymbol", getHaveVFDSymbol, METH_NOARGS, NULL },
 	{ "getKernelVersion", getKernelVersion, METH_NOARGS, NULL },
+	{ "getRCType", getRCType, METH_NOARGS, NULL },
+	{ "getRCName", getRCName, METH_NOARGS, NULL },
 	{ NULL, NULL, 0, NULL }
 };
 

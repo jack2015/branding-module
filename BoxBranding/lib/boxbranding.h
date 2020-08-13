@@ -61,5 +61,7 @@ char *_getBlindscanBin();
 char *_getSoCFamily();
 char *_getHaveVFDSymbol();
 char *_getKernelVersion();
+char *_getRCType();
+char *_getRCName();
 
 #endif

@@ -681,3 +681,13 @@ char *_getKernelVersion()
 {
 	return strdup(KERNELVERSION);
 }
+
+char *_getRCType()
+{
+	return strdup(RCTYPE);
+}
+
+char *_getRCName()
+{
+	return strdup(RCNAME);
+}
