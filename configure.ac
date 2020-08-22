@@ -334,6 +334,12 @@ AC_ARG_WITH(rcname,
 AC_SUBST(RCNAME)
 AC_DEFINE_UNQUOTED(RCNAME,"$RCNAME",[rc name])
 
+AC_ARG_WITH(rcidnum,
+	[  --with-rcidnum=NUMBER rc id number [[2,...]]],
+	[RCIDNUM="$withval"],[RCIDNUM=""])
+AC_SUBST(RCIDNUM)
+AC_DEFINE_UNQUOTED(RCIDNUM,"$RCIDNUM",[rc id number])
+
 AC_ARG_WITH(debug,
 	AS_HELP_STRING([--without-debug],[disable debugging code]),
 	[with_debug="$withval"],[with_debug=""])

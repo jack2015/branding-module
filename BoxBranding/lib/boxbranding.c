@@ -767,3 +767,8 @@ char *_getRCName()
 	}
 	return strdup(RCNAME);
 }
+
+char *_getRCIDNum()
+{
+	return strdup(RCIDNUM);
+}

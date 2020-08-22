@@ -63,5 +63,6 @@ char *_getHaveVFDSymbol();
 char *_getKernelVersion();
 char *_getRCType();
 char *_getRCName();
+char *_getRCIDNum();
 
 #endif
