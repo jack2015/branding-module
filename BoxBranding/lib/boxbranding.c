@@ -229,16 +229,6 @@ char *_getBoxType()
 	return strdup(BOXTYPE);
 }
 
-char *_getBrandOEM()
-{
-	return strdup(BRAND_OEM);
-}
-
-char *_getMachineBrand()
-{
-	return strdup(MACHINE_BRAND);
-}
-
 /** detecting real Box Name for OSD Translations
  */
 char *_getMachineName()
@@ -340,11 +330,6 @@ char *_getMachineName()
 char *_getMachineBuild()
 {
 	return strdup(MACHINE_BUILD);
-}
-
-char *_getMachineMake()
-{
-	return strdup(MACHINE_MAKE);
 }
 
 char *_getImageVersion()

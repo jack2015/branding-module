@@ -64,18 +64,6 @@ AC_ARG_WITH(boxtype,
 AC_SUBST(BOXTYPE)
 AC_DEFINE_UNQUOTED(BOXTYPE,"$BOXTYPE",[box type])
 
-AC_ARG_WITH(brandoem,
-	[  --with-brandoem=NAME brand oem [[dreambox,...]]],
-	[BRAND_OEM="$withval"],[BRAND_OEM=""])
-AC_SUBST(BRAND_OEM)
-AC_DEFINE_UNQUOTED(BRAND_OEM,"$BRAND_OEM",[brand oem])
-
-AC_ARG_WITH(machinebrand,
-	[  --with-machinebrand=NAME brand brand [[dreambox,...]]],
-	[MACHINE_BRAND="$withval"],[MACHINE_BRAND=""])
-AC_SUBST(MACHINE_BRAND)
-AC_DEFINE_UNQUOTED(MACHINE_BRAND,"$MACHINE_BRAND",[machine brand])
-
 AC_ARG_WITH(machinename,
 	[  --with-machinename=NAME machine name [[dm800,...]]],
 	[MACHINE_NAME="$withval"],[MACHINE_NAME=""])
@@ -87,12 +75,6 @@ AC_ARG_WITH(machinebuild,
 	[MACHINE_BUILD="$withval"],[MACHINE_BUILD=""])
 AC_SUBST(MACHINE_BUILD)
 AC_DEFINE_UNQUOTED(MACHINE_BUILD,"$MACHINE_BUILD",[stb platform])
-
-AC_ARG_WITH(machinemake,
-	[  --with-machinemake=NAME build name [[dm800,...]]],
-	[MACHINE_MAKE="$withval"],[MACHINE_MAKE=""])
-AC_SUBST(MACHINE_MAKE)
-AC_DEFINE_UNQUOTED(MACHINE_MAKE,"$MACHINE_MAKE",[build name])
 
 AC_ARG_WITH(imageversion,
 	[  --with-imageversion=NUMBER version number [[number,...]]],
