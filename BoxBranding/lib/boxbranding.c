@@ -105,104 +105,6 @@ char *_getBoxType()
 	return strdup(BOXTYPE);
 }
 
-/** detecting real Box Name for OSD Translations
- */
-char *_getMachineName()
-{
-	char *boxtype_name = NULL;
-	if(fileExist("/proc/stb/info/boxtype"))
-	{
-		boxtype_name = ReadProcEntry("/proc/stb/info/boxtype");
-		/** INI detection */
-		if(strcmp(boxtype_name, "ini-3000") == 0)
-		{
-			free(boxtype_name);
-			return strdup("HD-1");
-		}
-		else if(strcmp(boxtype_name, "ini-5000") == 0)
-		{
-			free(boxtype_name);
-			return strdup("HD-2");
-		}
-		else if(strcmp(boxtype_name, "ini-7000") == 0)
-		{
-			free(boxtype_name);
-			return strdup("HD-3");
-		}
-		else if(strcmp(boxtype_name, "ini-7012") == 0)
-		{
-			free(boxtype_name);
-			return strdup("HD-3");
-		}
-		else if(strcmp(boxtype_name, "ini-1000lx") == 0)
-		{
-			free(boxtype_name);
-			return strdup("LX-2T");
-		}
-		/** XTrend detection */
-		else if(strcmp(boxtype_name, "et7000") == 0)
-		{
-			free(boxtype_name);
-			boxtype_name = ReadProcEntry("/proc/stb/info/chipset");
-			if(startsWith(boxtype_name, "bcm73625"))
-			{
-				free(boxtype_name);
-				return strdup("ET7100 V2");
-			}
-			else
-			{
-				free(boxtype_name);
-				return strdup("ET7000");
-			}
-		}
-		else if(strcmp(boxtype_name, "sf8008") == 0)
-		{
-			free(boxtype_name);
-			boxtype_name = ReadProcEntry("/proc/stb/info/type");
-			if(startsWith(boxtype_name, "12"))
-			{
-				free(boxtype_name);
-				return strdup("SF8008 4K Combo");
-			}
-			else if(startsWith(boxtype_name, "11"))
-			{
-				free(boxtype_name);
-				return strdup("SF8008 4K Twin");
-			}
-			else
-			{
-				free(boxtype_name);
-				return strdup("SF8008 4K Single");
-			}
-		}
-		else if(strcmp(BOXTYPE, "twinboxlcd") == 0)
-		{
-			if(strcmp(boxtype_name, "7200S") == 0)
-			{
-				free(boxtype_name);
-				return strdup("TWINBOX LCD CI");
-			}
-		}
-		else /** if there is not matching STB name, return value from proc */
-		{
-			/*
-			 * TODO: The comment above and the code disagree.
-			 *
-			 * Which should it be? Right now it's the compile time string supplied via configure.
-			 */
-			free(boxtype_name);
-			return strdup(MACHINE_NAME);
-		}
-	}
-	else if (fileExist("/proc/stb/info/model"))
-	{
-		boxtype_name = ReadProcEntry("/proc/stb/info/model");
-		free(boxtype_name);
-		return strdup(MACHINE_NAME);
-	}
-	return strdup(MACHINE_NAME);
-}
-
 char *_getMachineBuild()
 {
 	return strdup(MACHINE_BUILD);
@@ -402,7 +304,7 @@ char *_getMachineProcModel() // return just value from proc entry
 		}
 		else
 		{
-			return strdup(MACHINE_NAME);
+			return strdup(BOXTYPE);
 		}
 	}
 	/** VU+ detection */
@@ -435,7 +337,7 @@ char *_getMachineProcModel() // return just value from proc entry
 			return real_boxtype_name;
 		}
 	}
-	return strdup(MACHINE_NAME);
+	return strdup(BOXTYPE);
 }
 
 char *_getHaveHDMI()

@@ -64,12 +64,6 @@ AC_ARG_WITH(boxtype,
 AC_SUBST(BOXTYPE)
 AC_DEFINE_UNQUOTED(BOXTYPE,"$BOXTYPE",[box type])
 
-AC_ARG_WITH(machinename,
-	[  --with-machinename=NAME machine name [[dm800,...]]],
-	[MACHINE_NAME="$withval"],[MACHINE_NAME=""])
-AC_SUBST(MACHINE_NAME)
-AC_DEFINE_UNQUOTED(MACHINE_NAME,"$MACHINE_NAME",[machine name])
-
 AC_ARG_WITH(machinebuild,
 	[  --with-machinebuild=NAME stb platform [[dm800,...]]],
 	[MACHINE_BUILD="$withval"],[MACHINE_BUILD=""])
