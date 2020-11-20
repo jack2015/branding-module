@@ -60,5 +60,6 @@ char *_getKernelVersion();
 char *_getRCType();
 char *_getRCName();
 char *_getRCIDNum();
+char *_getFHDSkin();
 
 #endif

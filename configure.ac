@@ -316,6 +316,12 @@ AC_ARG_WITH(rcidnum,
 AC_SUBST(RCIDNUM)
 AC_DEFINE_UNQUOTED(RCIDNUM,"$RCIDNUM",[rc id number])
 
+AC_ARG_WITH(fhdskin,
+	[  --with-fhdskin=NAME fhdskin [[fhdskin......]]],
+	[HAVE_FHDSKIN="$withval"],[HAVE_FHDSKIN="True"])
+AC_SUBST(HAVE_FHDSKIN)
+AC_DEFINE_UNQUOTED(HAVE_FHDSKIN,"$HAVE_FHDSKIN",[fhdskin])
+
 AC_ARG_WITH(debug,
 	AS_HELP_STRING([--without-debug],[disable debugging code]),
 	[with_debug="$withval"],[with_debug=""])

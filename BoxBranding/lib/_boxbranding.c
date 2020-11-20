@@ -66,6 +66,7 @@ MAKE_STRING_FUNCTION(getKernelVersion)
 MAKE_STRING_FUNCTION(getRCType)
 MAKE_STRING_FUNCTION(getRCName)
 MAKE_STRING_FUNCTION(getRCIDNum)
+MAKE_STRING_FUNCTION(getFHDSkin)
 
 /* Module specification */
 static PyMethodDef boxbrandingMethods[] = {
@@ -119,6 +120,7 @@ static PyMethodDef boxbrandingMethods[] = {
 	{ "getRCType", getRCType, METH_NOARGS, NULL },
 	{ "getRCName", getRCName, METH_NOARGS, NULL },
 	{ "getRCIDNum", getRCIDNum, METH_NOARGS, NULL },
+	{ "getFHDSkin", getFHDSkin, METH_NOARGS, NULL },
 	{ NULL, NULL, 0, NULL }
 };
 

@@ -535,3 +535,10 @@ char *_getRCIDNum()
 {
 	return strdup(RCIDNUM);
 }
+
+char *_getFHDSkin()
+{
+	if(strcmp(HAVE_FHDSKIN, "False") == 0)
+		return strdup("");
+	return strdup(HAVE_FHDSKIN);
+}
