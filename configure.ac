@@ -23,13 +23,13 @@ AX_PYTHON_DEVEL
 AX_PTHREAD
 
 AC_ARG_WITH(visionversion,
-	[  --with-visionversion=NAME vision version [[number,...]]],
+	[  --with-visionversion=NUMBER vision version [[number,...]]],
 	[VISIONVERSION="$withval"],[VISIONVERSION=""])
 AC_SUBST(VISIONVERSION)
 AC_DEFINE_UNQUOTED(VISIONVERSION,"$VISIONVERSION",[vision version])
 
 AC_ARG_WITH(visionrevision,
-	[  --with-visionrevision=NAME vision revision [[number,...]]],
+	[  --with-visionrevision=NUMBER vision revision [[number,...]]],
 	[VISIONREVISION="$withval"],[VISIONREVISION=""])
 AC_SUBST(VISIONREVISION)
 AC_DEFINE_UNQUOTED(VISIONREVISION,"$VISIONREVISION",[vision revision])
@@ -47,10 +47,10 @@ AC_SUBST(BOXBRAND)
 AC_DEFINE_UNQUOTED(BOXBRAND,"$BOXBRAND",[box brand])
 
 AC_ARG_WITH(oever,
-	[  --with-oever=NAME oe name [[7.2,...]]],
+	[  --with-oever=NUMBER oe number [[10.1,...]]],
 	[OE_VER="$withval"],[OE_VER=""])
 AC_SUBST(OE_VER)
-AC_DEFINE_UNQUOTED(OE_VER,"$OE_VER",[oe name])
+AC_DEFINE_UNQUOTED(OE_VER,"$OE_VER",[oe number])
 
 AC_ARG_WITH(distro,
 	[  --with-distro=NAME distro name [[openvision,...]]],
@@ -64,74 +64,50 @@ AC_ARG_WITH(boxtype,
 AC_SUBST(BOXTYPE)
 AC_DEFINE_UNQUOTED(BOXTYPE,"$BOXTYPE",[box type])
 
-AC_ARG_WITH(brandoem,
-	[  --with-brandoem=NAME brand oem [[dreambox,...]]],
-	[BRAND_OEM="$withval"],[BRAND_OEM=""])
-AC_SUBST(BRAND_OEM)
-AC_DEFINE_UNQUOTED(BRAND_OEM,"$BRAND_OEM",[brand oem])
-
-AC_ARG_WITH(machinebrand,
-	[  --with-machinebrand=NAME brand name [[dreambox,...]]],
-	[MACHINE_BRAND="$withval"],[MACHINE_BRAND=""])
-AC_SUBST(MACHINE_BRAND)
-AC_DEFINE_UNQUOTED(MACHINE_BRAND,"$MACHINE_BRAND",[machine name])
-
-AC_ARG_WITH(machinename,
-	[  --with-machinename=NAME machine name [[dm800,...]]],
-	[MACHINE_NAME="$withval"],[MACHINE_NAME=""])
-AC_SUBST(MACHINE_NAME)
-AC_DEFINE_UNQUOTED(MACHINE_NAME,"$MACHINE_NAME",[machine name])
-
 AC_ARG_WITH(machinebuild,
-	[  --with-machinebuild=NAME build name [[dm800,...]]],
+	[  --with-machinebuild=NAME stb platform [[dm800,...]]],
 	[MACHINE_BUILD="$withval"],[MACHINE_BUILD=""])
 AC_SUBST(MACHINE_BUILD)
-AC_DEFINE_UNQUOTED(MACHINE_BUILD,"$MACHINE_BUILD",[build name])
-
-AC_ARG_WITH(machinemake,
-	[  --with-machinemake=NAME build name [[dm800,...]]],
-	[MACHINE_MAKE="$withval"],[MACHINE_MAKE=""])
-AC_SUBST(MACHINE_MAKE)
-AC_DEFINE_UNQUOTED(MACHINE_MAKE,"$MACHINE_MAKE",[build name])
+AC_DEFINE_UNQUOTED(MACHINE_BUILD,"$MACHINE_BUILD",[stb platform])
 
 AC_ARG_WITH(imageversion,
-	[  --with-imageversion=NAME version number [[number,...]]],
+	[  --with-imageversion=NUMBER version number [[number,...]]],
 	[IMAGEVERSION="$withval"],[IMAGEVERSION=""])
 AC_SUBST(IMAGEVERSION)
 AC_DEFINE_UNQUOTED(IMAGEVERSION,"$IMAGEVERSION",[version number])
 
 AC_ARG_WITH(imagebuild,
-	[  --with-imagebuild=NAME build number [[number,...]]],
+	[  --with-imagebuild=NUMBER build number [[number,...]]],
 	[IMAGEBUILD="$withval"],[IMAGEBUILD=""])
 AC_SUBST(IMAGEBUILD)
 AC_DEFINE_UNQUOTED(IMAGEBUILD,"$IMAGEBUILD",[build number])
 
 AC_ARG_WITH(imagedevbuild,
-	[  --with-imagedevbuild=NAME dev build number [[number,...]]],
+	[  --with-imagedevbuild=NUMBER dev build number [[number,...]]],
 	[IMAGEDEVBUILD="$withval"],[IMAGEDEVBUILD=""])
 AC_SUBST(IMAGEDEVBUILD)
 AC_DEFINE_UNQUOTED(IMAGEDEVBUILD,"$IMAGEDEVBUILD",[build number])
 
 AC_ARG_WITH(imagetype,
-	[  --with-imagetype=NAME imagetype name [[release,...]]],
+	[  --with-imagetype=NAME imagetype name [[develop,...]]],
 	[DISTRO_TYPE="$withval"],[DISTRO_TYPE=""])
 AC_SUBST(DISTRO_TYPE)
 AC_DEFINE_UNQUOTED(DISTRO_TYPE,"$DISTRO_TYPE",[imagetype name])
 
 AC_ARG_WITH(feedsurl,
-	[  --with-feedsurl=NAME feeds url  [[628]]],
+	[  --with-feedsurl=NAME feeds url  [[openvision,...]]],
 	[FEEDSURL="$withval"],[FEEDSURL=""])
 AC_SUBST(FEEDSURL)
-AC_DEFINE_UNQUOTED(FEEDSURL,"$FEEDSURL",[feeds url ])
+AC_DEFINE_UNQUOTED(FEEDSURL,"$FEEDSURL",[feeds url])
 
 AC_ARG_WITH(imagedir,
-	[  --with-imagedir=NAME imagedir folder [[628]]],
+	[  --with-imagedir=NAME imagedir folder [[machine,...]]],
 	[IMAGEDIR="$withval"],[IMAGEDIR=""])
 AC_SUBST(IMAGEDIR)
 AC_DEFINE_UNQUOTED(IMAGEDIR,"$IMAGEDIR",[imagedir folder])
 
 AC_ARG_WITH(imagefs,
-	[  --with-imagefs=NAME imagefs folder [[628]]],
+	[  --with-imagefs=NAME imagefs folder [[ext,...]]],
 	[IMAGE_FSTYPES="$withval"],[IMAGE_FSTYPES=""])
 AC_SUBST(IMAGE_FSTYPES)
 AC_DEFINE_UNQUOTED(IMAGE_FSTYPES,"$IMAGE_FSTYPES",[imagefs folder])
@@ -167,16 +143,22 @@ AC_SUBST(KERNEL_FILE)
 AC_DEFINE_UNQUOTED(KERNEL_FILE,"$KERNEL_FILE",[kernelfile name])
 
 AC_ARG_WITH(mkubifs,
-	[  --with-mkubifs=NAME mkubifs number [[2048,...]]],
+	[  --with-mkubifs=NUMBER mkubifs number [[2048,...]]],
 	[MKUBIFS_ARGS="$withval"],[MKUBIFS_ARGS=""])
 AC_SUBST(MKUBIFS_ARGS)
 AC_DEFINE_UNQUOTED(MKUBIFS_ARGS,"$MKUBIFS_ARGS",[mkubifs number])
 
 AC_ARG_WITH(ubinize,
-	[  --with-ubinize=NAME ubinize number [[2048,...]]],
+	[  --with-ubinize=NUMBER ubinize number [[2048,...]]],
 	[UBINIZE_ARGS="$withval"],[UBINIZE_ARGS=""])
 AC_SUBST(UBINIZE_ARGS)
 AC_DEFINE_UNQUOTED(UBINIZE_ARGS,"$UBINIZE_ARGS",[ubinize number])
+
+AC_ARG_WITH(forcemode,
+	[  --with-forcemode=NAME forcemode name [[no,...]]],
+	[FORCE_MODE="$withval"],[FORCE_MODE=""])
+AC_SUBST(FORCE_MODE)
+AC_DEFINE_UNQUOTED(FORCE_MODE,"$FORCE_MODE",[forcemode name])
 
 AC_ARG_WITH(arch,
 	[  --with-arch=NAME arch name [[mips32el,...]]],
@@ -225,6 +207,120 @@ AC_ARG_WITH(multilib,
 	[HAVE_MULTILIB="$withval"],[HAVE_MULTILIB="True"])
 AC_SUBST(HAVE_MULTILIB)
 AC_DEFINE_UNQUOTED(HAVE_MULTILIB,"$HAVE_MULTILIB",[multilib])
+
+AC_ARG_WITH(hdmi,
+	[  --with-hdmi=NAME hdmi [[hdmi......]]],
+	[HAVE_HDMI="$withval"],[HAVE_HDMI="True"])
+AC_SUBST(HAVE_HDMI)
+AC_DEFINE_UNQUOTED(HAVE_HDMI,"$HAVE_HDMI",[hdmi])
+
+AC_ARG_WITH(yuv,
+	[  --with-yuv=NAME yuv [[yuv......]]],
+	[HAVE_YUV="$withval"],[HAVE_YUV="True"])
+AC_SUBST(HAVE_YUV)
+AC_DEFINE_UNQUOTED(HAVE_YUV,"$HAVE_YUV",[yuv])
+
+AC_ARG_WITH(rca,
+	[  --with-rca=NAME rca [[rca......]]],
+	[HAVE_RCA="$withval"],[HAVE_RCA="True"])
+AC_SUBST(HAVE_RCA)
+AC_DEFINE_UNQUOTED(HAVE_RCA,"$HAVE_RCA",[rca])
+
+AC_ARG_WITH(av-jack,
+	[  --with-av-jack=NAME av-jack [[av-jack......]]],
+	[HAVE_AV_JACK="$withval"],[HAVE_AV_JACK="True"])
+AC_SUBST(HAVE_AV_JACK)
+AC_DEFINE_UNQUOTED(HAVE_AV_JACK,"$HAVE_AV_JACK",[av-jack])
+
+AC_ARG_WITH(scart,
+	[  --with-scart=NAME scart [[scart......]]],
+	[HAVE_SCART="$withval"],[HAVE_SCART="True"])
+AC_SUBST(HAVE_SCART)
+AC_DEFINE_UNQUOTED(HAVE_SCART,"$HAVE_SCART",[scart])
+
+AC_ARG_WITH(dvi,
+	[  --with-dvi=NAME dvi [[dvi......]]],
+	[HAVE_DVI="$withval"],[HAVE_DVI="True"])
+AC_SUBST(HAVE_DVI)
+AC_DEFINE_UNQUOTED(HAVE_DVI,"$HAVE_DVI",[dvi])
+
+AC_ARG_WITH(svideo,
+	[  --with-svideo=NAME svideo [[svideo......]]],
+	[HAVE_SVIDEO="$withval"],[HAVE_SVIDEO="True"])
+AC_SUBST(HAVE_SVIDEO)
+AC_DEFINE_UNQUOTED(HAVE_SVIDEO,"$HAVE_SVIDEO",[svideo])
+
+AC_ARG_WITH(hdmi-in-hd,
+	[  --with-hdmi-in-hd=NAME hdmi-in-hd [[hdmi-in-hd......]]],
+	[HAVE_HDMI_IN_HD="$withval"],[HAVE_HDMI_IN_HD="True"])
+AC_SUBST(HAVE_HDMI_IN_HD)
+AC_DEFINE_UNQUOTED(HAVE_HDMI_IN_HD,"$HAVE_HDMI_IN_HD",[hdmi-in-hd])
+
+AC_ARG_WITH(hdmi-in-fhd,
+	[  --with-hdmi-in-fhd=NAME hdmi-in-fhd [[hdmi-in-fhd......]]],
+	[HAVE_HDMI_IN_FHD="$withval"],[HAVE_HDMI_IN_FHD="True"])
+AC_SUBST(HAVE_HDMI_IN_FHD)
+AC_DEFINE_UNQUOTED(HAVE_HDMI_IN_FHD,"$HAVE_HDMI_IN_FHD",[hdmi-in-fhd])
+
+AC_ARG_WITH(wol,
+	[  --with-wol=NAME wol [[wol......]]],
+	[HAVE_WOL="$withval"],[HAVE_WOL="True"])
+AC_SUBST(HAVE_WOL)
+AC_DEFINE_UNQUOTED(HAVE_WOL,"$HAVE_WOL",[wol])
+
+AC_ARG_WITH(ci,
+	[  --with-ci=NAME ci [[ci......]]],
+	[HAVE_CI="$withval"],[HAVE_CI="True"])
+AC_SUBST(HAVE_CI)
+AC_DEFINE_UNQUOTED(HAVE_CI,"$HAVE_CI",[ci])
+
+AC_ARG_WITH(blindscanbinary,
+	[  --with-blindscanbinary=NAME blindscan binary [[blindscan,...]]],
+	[BLINDSCANBINARY="$withval"],[BLINDSCANBINARY=""])
+AC_SUBST(BLINDSCANBINARY)
+AC_DEFINE_UNQUOTED(BLINDSCANBINARY,"$BLINDSCANBINARY",[blindscan binary])
+
+AC_ARG_WITH(socfamily,
+	[  --with-socfamily=NAME SoC family [[SoC,...]]],
+	[SOCFAMILY="$withval"],[SOCFAMILY=""])
+AC_SUBST(SOCFAMILY)
+AC_DEFINE_UNQUOTED(SOCFAMILY,"$SOCFAMILY",[SoC family])
+
+AC_ARG_WITH(vfd-symbol,
+	[  --with-vfd-symbol=NAME vfd symbol [[vfdsymbol,...]]],
+	[HAVE_VFDSYMBOL="$withval"],[HAVE_VFDSYMBOL="True"])
+AC_SUBST(HAVE_VFDSYMBOL)
+AC_DEFINE_UNQUOTED(HAVE_VFDSYMBOL,"$HAVE_VFDSYMBOL",[vfdsymbol])
+
+AC_ARG_WITH(kernelversion,
+	[  --with-kernelversion=NUMBER kernel version [[4,...]]],
+	[KERNELVERSION="$withval"],[KERNELVERSION=""])
+AC_SUBST(KERNELVERSION)
+AC_DEFINE_UNQUOTED(KERNELVERSION,"$KERNELVERSION",[kernel version])
+
+AC_ARG_WITH(rctype,
+	[  --with-rctype=NUMBER rc type [[0,...]]],
+	[RCTYPE="$withval"],[RCTYPE=""])
+AC_SUBST(RCTYPE)
+AC_DEFINE_UNQUOTED(RCTYPE,"$RCTYPE",[rc type])
+
+AC_ARG_WITH(rcname,
+	[  --with-rcname=NAME rc name [[dmm,...]]],
+	[RCNAME="$withval"],[RCNAME=""])
+AC_SUBST(RCNAME)
+AC_DEFINE_UNQUOTED(RCNAME,"$RCNAME",[rc name])
+
+AC_ARG_WITH(rcidnum,
+	[  --with-rcidnum=NUMBER rc id number [[2,...]]],
+	[RCIDNUM="$withval"],[RCIDNUM=""])
+AC_SUBST(RCIDNUM)
+AC_DEFINE_UNQUOTED(RCIDNUM,"$RCIDNUM",[rc id number])
+
+AC_ARG_WITH(fhdskin,
+	[  --with-fhdskin=NAME fhdskin [[fhdskin......]]],
+	[HAVE_FHDSKIN="$withval"],[HAVE_FHDSKIN="True"])
+AC_SUBST(HAVE_FHDSKIN)
+AC_DEFINE_UNQUOTED(HAVE_FHDSKIN,"$HAVE_FHDSKIN",[fhdskin])
 
 AC_ARG_WITH(debug,
 	AS_HELP_STRING([--without-debug],[disable debugging code]),

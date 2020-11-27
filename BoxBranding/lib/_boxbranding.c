@@ -23,11 +23,7 @@ MAKE_STRING_FUNCTION(getBoxBrand)
 MAKE_STRING_FUNCTION(getOEVersion)
 MAKE_STRING_FUNCTION(getImageDistro)
 MAKE_STRING_FUNCTION(getBoxType)
-MAKE_STRING_FUNCTION(getBrandOEM)
-MAKE_STRING_FUNCTION(getMachineBrand)
-MAKE_STRING_FUNCTION(getMachineName)
 MAKE_STRING_FUNCTION(getMachineBuild)
-MAKE_STRING_FUNCTION(getMachineMake)
 MAKE_STRING_FUNCTION(getImageVersion)
 MAKE_STRING_FUNCTION(getImageBuild)
 MAKE_STRING_FUNCTION(getImageDevBuild)
@@ -42,6 +38,7 @@ MAKE_STRING_FUNCTION(getMachineRootFile)
 MAKE_STRING_FUNCTION(getMachineKernelFile)
 MAKE_STRING_FUNCTION(getMachineMKUBIFS)
 MAKE_STRING_FUNCTION(getMachineUBINIZE)
+MAKE_STRING_FUNCTION(getForceMode)
 MAKE_STRING_FUNCTION(getImageArch)
 MAKE_STRING_FUNCTION(getImageFPU)
 MAKE_STRING_FUNCTION(getDisplayType)
@@ -51,6 +48,25 @@ MAKE_STRING_FUNCTION(getHaveTranscoding)
 MAKE_STRING_FUNCTION(getHaveMultiTranscoding)
 MAKE_STRING_FUNCTION(getHaveMultiLib)
 MAKE_STRING_FUNCTION(getMachineProcModel)
+MAKE_STRING_FUNCTION(getHaveHDMI)
+MAKE_STRING_FUNCTION(getHaveYUV)
+MAKE_STRING_FUNCTION(getHaveRCA)
+MAKE_STRING_FUNCTION(getHaveAVJACK)
+MAKE_STRING_FUNCTION(getHaveSCART)
+MAKE_STRING_FUNCTION(getHaveDVI)
+MAKE_STRING_FUNCTION(getHaveSVIDEO)
+MAKE_STRING_FUNCTION(getHaveHDMIinHD)
+MAKE_STRING_FUNCTION(getHaveHDMIinFHD)
+MAKE_STRING_FUNCTION(getHaveWOL)
+MAKE_STRING_FUNCTION(getHaveCI)
+MAKE_STRING_FUNCTION(getBlindscanBin)
+MAKE_STRING_FUNCTION(getSoCFamily)
+MAKE_STRING_FUNCTION(getHaveVFDSymbol)
+MAKE_STRING_FUNCTION(getKernelVersion)
+MAKE_STRING_FUNCTION(getRCType)
+MAKE_STRING_FUNCTION(getRCName)
+MAKE_STRING_FUNCTION(getRCIDNum)
+MAKE_STRING_FUNCTION(getFHDSkin)
 
 /* Module specification */
 static PyMethodDef boxbrandingMethods[] = {
@@ -61,11 +77,7 @@ static PyMethodDef boxbrandingMethods[] = {
 	{ "getOEVersion", getOEVersion, METH_NOARGS, NULL },
 	{ "getImageDistro", getImageDistro, METH_NOARGS, NULL },
 	{ "getBoxType", getBoxType, METH_NOARGS, NULL },
-	{ "getBrandOEM", getBrandOEM, METH_NOARGS, NULL },
-	{ "getMachineBrand", getMachineBrand, METH_NOARGS, NULL },
-	{ "getMachineName", getMachineName, METH_NOARGS, NULL },
 	{ "getMachineBuild", getMachineBuild, METH_NOARGS, NULL },
-	{ "getMachineMake", getMachineMake, METH_NOARGS, NULL },
 	{ "getImageVersion", getImageVersion, METH_NOARGS, NULL },
 	{ "getImageBuild", getImageBuild, METH_NOARGS, NULL },
 	{ "getImageDevBuild", getImageDevBuild, METH_NOARGS, NULL },
@@ -80,6 +92,7 @@ static PyMethodDef boxbrandingMethods[] = {
 	{ "getMachineKernelFile", getMachineKernelFile, METH_NOARGS, NULL },
 	{ "getMachineMKUBIFS", getMachineMKUBIFS, METH_NOARGS, NULL },
 	{ "getMachineUBINIZE", getMachineUBINIZE, METH_NOARGS, NULL },
+	{ "getForceMode", getForceMode, METH_NOARGS, NULL },
 	{ "getImageArch", getImageArch, METH_NOARGS, NULL },
 	{ "getImageFPU", getImageFPU, METH_NOARGS, NULL },
 	{ "getDisplayType", getDisplayType, METH_NOARGS, NULL },
@@ -89,10 +102,46 @@ static PyMethodDef boxbrandingMethods[] = {
 	{ "getHaveMultiTranscoding", getHaveMultiTranscoding, METH_NOARGS, NULL },
 	{ "getHaveMultiLib", getHaveMultiLib, METH_NOARGS, NULL },
 	{ "getMachineProcModel", getMachineProcModel, METH_NOARGS, NULL },
+	{ "getHaveHDMI", getHaveHDMI, METH_NOARGS, NULL },
+	{ "getHaveYUV", getHaveYUV, METH_NOARGS, NULL },
+	{ "getHaveRCA", getHaveRCA, METH_NOARGS, NULL },
+	{ "getHaveAVJACK", getHaveAVJACK, METH_NOARGS, NULL },
+	{ "getHaveSCART", getHaveSCART, METH_NOARGS, NULL },
+	{ "getHaveDVI", getHaveDVI, METH_NOARGS, NULL },
+	{ "getHaveSVIDEO", getHaveSVIDEO, METH_NOARGS, NULL },
+	{ "getHaveHDMIinHD", getHaveHDMIinHD, METH_NOARGS, NULL },
+	{ "getHaveHDMIinFHD", getHaveHDMIinFHD, METH_NOARGS, NULL },
+	{ "getHaveWOL", getHaveWOL, METH_NOARGS, NULL },
+	{ "getHaveCI", getHaveCI, METH_NOARGS, NULL },
+	{ "getBlindscanBin", getBlindscanBin, METH_NOARGS, NULL },
+	{ "getSoCFamily", getSoCFamily, METH_NOARGS, NULL },
+	{ "getHaveVFDSymbol", getHaveVFDSymbol, METH_NOARGS, NULL },
+	{ "getKernelVersion", getKernelVersion, METH_NOARGS, NULL },
+	{ "getRCType", getRCType, METH_NOARGS, NULL },
+	{ "getRCName", getRCName, METH_NOARGS, NULL },
+	{ "getRCIDNum", getRCIDNum, METH_NOARGS, NULL },
+	{ "getFHDSkin", getFHDSkin, METH_NOARGS, NULL },
 	{ NULL, NULL, 0, NULL }
 };
 
 /* Initialize the module */
+#if PY_MAJOR_VERSION >= 3
+static struct PyModuleDef boxbrandingmodule_moduledef = {
+		PyModuleDef_HEAD_INIT,
+		"boxbranding",
+		"boxbranding",
+		-1,
+		boxbrandingMethods,
+		NULL,
+		NULL,
+		NULL,
+		NULL,
+	};
+
+PyObject* PyInit_boxbranding() {
+	PyModule_Create(&boxbrandingmodule_moduledef);
+#else
 void initboxbranding() {
 	Py_InitModule("boxbranding", boxbrandingMethods);
+#endif
 }
