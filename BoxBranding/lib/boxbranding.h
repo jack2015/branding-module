@@ -61,5 +61,6 @@ char *_getRCType();
 char *_getRCName();
 char *_getRCIDNum();
 char *_getFHDSkin();
+char *_getE2Service();
 
 #endif

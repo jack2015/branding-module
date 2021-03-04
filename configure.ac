@@ -322,6 +322,12 @@ AC_ARG_WITH(fhdskin,
 AC_SUBST(HAVE_FHDSKIN)
 AC_DEFINE_UNQUOTED(HAVE_FHDSKIN,"$HAVE_FHDSKIN",[fhdskin])
 
+AC_ARG_WITH(e2service,
+	[  --with-e2service=Enigma2 service name [[servicemp3,...]]],
+	[E2SERVICE="$withval"],[E2SERVICE=""])
+AC_SUBST(E2SERVICE)
+AC_DEFINE_UNQUOTED(E2SERVICE,"$E2SERVICE",[service name])
+
 AC_ARG_WITH(debug,
 	AS_HELP_STRING([--without-debug],[disable debugging code]),
 	[with_debug="$withval"],[with_debug=""])
