@@ -542,3 +542,8 @@ char *_getFHDSkin()
 		return strdup("");
 	return strdup(HAVE_FHDSKIN);
 }
+
+char *_getE2Service()
+{
+	return strdup(E2SERVICE);
+}
